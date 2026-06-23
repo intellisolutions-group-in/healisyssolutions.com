@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Inventory Management Platform",
+    "type": "Web Application",
+    "challenge": "A growing retail business struggled with manual stock tracking across multiple locations, leading to frequent discrepancies and delayed reordering.",
+    "solution": "Healisys Solutions developed a centralised web-based inventory system with real-time updates, role-based access, and automated low-stock alerts.",
+    "technologies": ["React", "Node.js", "PostgreSQL", "REST API"],
+    "outcome": "Stock accuracy improved significantly and reorder cycles became predictable, reducing operational overhead."
+  },
+  {
+    "id": 2,
+    "title": "Fleet Tracking Mobile App",
+    "type": "Mobile Application",
+    "challenge": "A logistics operator needed drivers and dispatchers to coordinate deliveries without relying on phone calls and spreadsheets.",
+    "solution": "A cross-platform mobile app with live location sharing, delivery status updates, and push notifications was built and deployed.",
+    "technologies": ["React Native", "Firebase", "Google Maps API", "Node.js"],
+    "outcome": "Dispatch coordination became faster and customers received timely delivery status updates."
+  },
+  {
+    "id": 3,
+    "title": "Patient Portal System",
+    "type": "Healthcare Web Portal",
+    "challenge": "A healthcare provider wanted patients to book appointments and access reports online while maintaining data privacy.",
+    "solution": "A secure patient portal with appointment scheduling, report downloads, and encrypted data handling was developed.",
+    "technologies": [".NET", "SQL Server", "React", "Azure"],
+    "outcome": "Front-desk workload reduced and patients gained convenient self-service access."
+  },
+  {
+    "id": 4,
+    "title": "E-commerce Store Rebuild",
+    "type": "E-commerce Platform",
+    "challenge": "An online brand faced slow page loads and a confusing checkout that affected conversion rates.",
+    "solution": "The store was rebuilt with optimised performance, simplified navigation, and integrated payment gateways popular in India.",
+    "technologies": ["Next.js", "Stripe", "Razorpay", "MongoDB"],
+    "outcome": "Page speed improved and the checkout experience became smoother for customers."
+  },
+  {
+    "id": 5,
+    "title": "Enterprise HR Dashboard",
+    "type": "Enterprise Application",
+    "challenge": "A manufacturing company managed employee records across disconnected spreadsheets and legacy tools.",
+    "solution": "An integrated HR dashboard with attendance, leave management, and reporting modules was delivered.",
+    "technologies": ["Angular", ".NET Core", "PostgreSQL", "Docker"],
+    "outcome": "HR processes were centralised and management gained clearer workforce visibility."
+  },
+  {
+    "id": 6,
+    "title": "Learning Management System",
+    "type": "Education Platform",
+    "challenge": "An education provider needed to deliver courses online with progress tracking and assessments.",
+    "solution": "A custom LMS with course modules, quizzes, certificates, and admin analytics was built.",
+    "technologies": ["React", "Python", "Django", "PostgreSQL"],
+    "outcome": "Learners accessed courses remotely and administrators tracked engagement effectively."
+  },
+  {
+    "id": 7,
+    "title": "API Integration Hub",
+    "type": "Integration Project",
+    "challenge": "A SaaS company needed to connect multiple third-party services without custom code for each integration.",
+    "solution": "A modular API integration layer with standardised connectors and monitoring was implemented.",
+    "technologies": ["Node.js", "GraphQL", "Redis", "AWS Lambda"],
+    "outcome": "New integrations were deployed faster with reduced maintenance effort."
+  },
+  {
+    "id": 8,
+    "title": "Legacy System Modernisation",
+    "type": "Modernisation Project",
+    "challenge": "A long-running desktop application was difficult to maintain and could not scale with business growth.",
+    "solution": "The system was re-architected into a cloud-ready web application with improved security and maintainability.",
+    "technologies": ["React", "Node.js", "PostgreSQL", "AWS"],
+    "outcome": "Maintenance costs decreased and the platform became accessible from any location."
+  }
+]

@@ -1,0 +1,93 @@
+{
+  "categories": [
+    {
+      "name": "General",
+      "items": [
+        {
+          "question": "What services does Healisys Solutions offer?",
+          "answer": "We offer web development, mobile app development, custom software, enterprise applications, UI/UX design, API development, cloud solutions, e-commerce development, software testing, consulting, and more."
+        },
+        {
+          "question": "Where is Healisys Solutions based?",
+          "answer": "Healisys Solutions is an India-based IT and software development company serving clients across the country and internationally through remote collaboration."
+        },
+        {
+          "question": "How long has Healisys Solutions been in business?",
+          "answer": "Our domain was registered in April 2010, and we have been delivering software development services since our establishment that year."
+        }
+      ]
+    },
+    {
+      "name": "Projects & Engagement",
+      "items": [
+        {
+          "question": "How do you start a new project?",
+          "answer": "Every project begins with a discovery call to understand your goals, followed by requirements documentation, technical planning, and a proposed timeline with clear milestones."
+        },
+        {
+          "question": "What is your typical project timeline?",
+          "answer": "Timelines vary based on scope. A small web application may take 6-8 weeks, while larger enterprise systems can span several months. We provide estimates after the discovery phase."
+        },
+        {
+          "question": "Do you work with startups as well as enterprises?",
+          "answer": "Yes. We work with startups, SMEs, and larger organisations. Our approach scales to match your budget, timeline, and technical requirements."
+        },
+        {
+          "question": "Can you take over an existing project?",
+          "answer": "Yes. We regularly assist clients whose projects were started by other teams. We begin with a code and architecture review before proposing next steps."
+        }
+      ]
+    },
+    {
+      "name": "Technology",
+      "items": [
+        {
+          "question": "Which technologies do you use?",
+          "answer": "We work with React, Next.js, Node.js, .NET, Python, Flutter, React Native, PostgreSQL, MongoDB, AWS, Azure, and other modern tools selected per project needs."
+        },
+        {
+          "question": "Do you provide mobile app development for both iOS and Android?",
+          "answer": "Yes. We build native and cross-platform mobile applications for both iOS and Android using technologies like React Native and Flutter."
+        },
+        {
+          "question": "Can you integrate with third-party APIs and payment gateways?",
+          "answer": "Absolutely. We integrate payment gateways popular in India such as Razorpay, along with CRMs, ERPs, shipping providers, and other third-party services."
+        }
+      ]
+    },
+    {
+      "name": "Support & Pricing",
+      "items": [
+        {
+          "question": "Do you offer post-launch support?",
+          "answer": "Yes. We provide maintenance and support packages covering bug fixes, security updates, performance monitoring, and feature enhancements."
+        },
+        {
+          "question": "How is pricing structured?",
+          "answer": "Pricing depends on project scope, complexity, and engagement model. We offer fixed-price and time-and-materials options after understanding your requirements."
+        },
+        {
+          "question": "How do I get a project quote?",
+          "answer": "Contact us at info@healisyssolutions.com with a brief description of your project. We will schedule a call and provide a tailored proposal."
+        },
+        {
+          "question": "What communication can I expect during development?",
+          "answer": "We provide regular status updates, sprint demos, and direct access to your project manager. Communication channels include email, video calls, and project management tools."
+        }
+      ]
+    },
+    {
+      "name": "Careers",
+      "items": [
+        {
+          "question": "How do I apply for a position at Healisys Solutions?",
+          "answer": "Visit our Careers page, browse open positions, and click Apply on the role that interests you. Submit your details and resume through the application form."
+        },
+        {
+          "question": "Do you offer remote work opportunities?",
+          "answer": "Yes. Most positions are available as Vadodara / Remote, allowing talented professionals across India to join our team."
+        }
+      ]
+    }
+  ]
+}

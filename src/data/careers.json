@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "title": "Senior Full Stack Developer",
+    "department": "Engineering",
+    "location": "Vadodara / Remote",
+    "description": "Build and maintain web applications using modern JavaScript frameworks. Collaborate with designers and QA to deliver high-quality features.",
+    "requirements": [
+      "4+ years experience in web development",
+      "Strong knowledge of React and Node.js",
+      "Experience with REST APIs and databases",
+      "Good communication skills"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Mobile App Developer",
+    "department": "Engineering",
+    "location": "Vadodara / Remote",
+    "description": "Develop cross-platform and native mobile applications for iOS and Android platforms.",
+    "requirements": [
+      "3+ years mobile development experience",
+      "Proficiency in React Native or Flutter",
+      "Understanding of app store deployment",
+      "Portfolio of published apps preferred"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Designer",
+    "department": "Design",
+    "location": "Vadodara / Remote",
+    "description": "Create intuitive user interfaces and engaging experiences for web and mobile applications.",
+    "requirements": [
+      "3+ years UI/UX design experience",
+      "Proficiency in Figma or Adobe XD",
+      "Strong portfolio demonstrating web and mobile work",
+      "Understanding of design systems"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "QA Engineer",
+    "department": "Quality Assurance",
+    "location": "Vadodara / Remote",
+    "description": "Plan and execute manual and automated tests to ensure software quality before release.",
+    "requirements": [
+      "2+ years QA experience",
+      "Knowledge of test planning and bug reporting",
+      "Familiarity with automation tools is a plus",
+      "Attention to detail"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "DevOps Engineer",
+    "department": "Infrastructure",
+    "location": "Vadodara / Remote",
+    "description": "Manage CI/CD pipelines, cloud infrastructure, and deployment processes for client projects.",
+    "requirements": [
+      "3+ years DevOps or cloud experience",
+      "Experience with AWS or Azure",
+      "Knowledge of Docker and CI/CD tools",
+      "Linux administration skills"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Business Analyst",
+    "department": "Consulting",
+    "location": "Vadodara / Remote",
+    "description": "Gather requirements, document specifications, and bridge communication between clients and development teams.",
+    "requirements": [
+      "3+ years business analysis experience",
+      "Strong documentation skills",
+      "Experience in software projects",
+      "Excellent verbal and written communication"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Junior Software Developer",
+    "department": "Engineering",
+    "location": "Vadodara / Remote",
+    "description": "Support development teams in building features, fixing bugs, and learning best practices in software engineering.",
+    "requirements": [
+      "1+ year experience or relevant internship",
+      "Knowledge of at least one programming language",
+      "Eagerness to learn and grow",
+      "Computer Science degree preferred"
+    ]
+  }
+]
