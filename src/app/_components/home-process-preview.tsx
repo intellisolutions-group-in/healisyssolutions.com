@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
 
 import { SectionTitle, Button } from '@/components/core'
 import Container from '@/components/core/container'
@@ -42,11 +41,9 @@ const HomeProcessPreview = () => {
           ))}
         </div>
         <div className='mt-4 text-center'>
-          <Link href='/our-process/'>
-            <Button variant='contained' color='light'>
-              Learn More
-            </Button>
-          </Link>
+          <Button href='/our-process/' variant='contained' color='light'>
+            Learn More
+          </Button>
         </div>
       </Container>
     </section>

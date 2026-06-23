@@ -8,7 +8,7 @@ import ContentCard from '@/components/layout/content-card'
 import Container from '@/components/core/container'
 import ContactForm from '@/components/ui/contact-form'
 import EmailIcon from '@/assets/icons/eva--email-outline.svg'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import { CompanyConfig } from '@/configs/company.config'
 import company from '@/data/company.json'
 
@@ -19,8 +19,17 @@ export const metadata: Metadata = createMetadata({
 })
 
 export default function ContactPage(): JSX.Element {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Contact', href: '/contact/' },
+  ])
+
   return (
     <InnerPageLayout showCta={false}>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <PageHero
         badge="Let's Talk"
         sectionLabel='CONTACT US'

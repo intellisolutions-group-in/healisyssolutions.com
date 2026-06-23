@@ -6,7 +6,7 @@ import InnerPageLayout from '@/components/layout/inner-page-layout'
 import SectionHeader from '@/components/layout/section-header'
 import BlogCard from '@/components/sections/blog-card'
 import Container from '@/components/core/container'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import { blogs } from '@/constants/blog'
 import company from '@/data/company.json'
 
@@ -17,8 +17,17 @@ export const metadata: Metadata = createMetadata({
 })
 
 export default function BlogPage(): JSX.Element {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Blog', href: '/blog/' },
+  ])
+
   return (
     <InnerPageLayout ctaButtonText='Discuss Your Project'>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <PageHero
         badge='Blog'
         sectionLabel='INSIGHTS'

@@ -6,7 +6,7 @@ import InnerPageLayout from '@/components/layout/inner-page-layout'
 import SectionHeader from '@/components/layout/section-header'
 import TestimonialCard from '@/components/sections/testimonial-card'
 import Container from '@/components/core/container'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import testimonials from '@/data/testimonials.json'
 
 export const metadata: Metadata = createMetadata({
@@ -16,8 +16,17 @@ export const metadata: Metadata = createMetadata({
 })
 
 export default function TestimonialsPage(): JSX.Element {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Testimonials', href: '/testimonials/' },
+  ])
+
   return (
     <InnerPageLayout>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <PageHero
         badge='Testimonials'
         sectionLabel='CLIENT FEEDBACK'
@@ -43,7 +52,6 @@ export default function TestimonialsPage(): JSX.Element {
                 text={t.text}
                 name={t.name}
                 designation={t.designation}
-                company={t.company}
               />
             ))}
           </div>

@@ -6,7 +6,7 @@ import InnerPageLayout from '@/components/layout/inner-page-layout'
 import SectionHeader from '@/components/layout/section-header'
 import ContentCard from '@/components/layout/content-card'
 import Container from '@/components/core/container'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import company from '@/data/company.json'
 
 const REASONS = [
@@ -25,8 +25,17 @@ export const metadata: Metadata = createMetadata({
 })
 
 export default function WhyChooseUsPage(): JSX.Element {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Why Choose Us', href: '/why-choose-us/' },
+  ])
+
   return (
     <InnerPageLayout ctaButtonText='Start a Conversation'>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <PageHero
         badge='Why Us'
         sectionLabel='WHY CHOOSE US'

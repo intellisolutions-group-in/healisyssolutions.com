@@ -5,7 +5,7 @@ import PageSection from '@/components/layout/page-section'
 import ContentCard from '@/components/layout/content-card'
 import Container from '@/components/core/container'
 import InnerPageLayout from '@/components/layout/inner-page-layout'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import company from '@/data/company.json'
 
 export const metadata: Metadata = createMetadata({
@@ -30,8 +30,17 @@ const SECTIONS = [
 ]
 
 export default function PrivacyPage(): JSX.Element {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Privacy Policy', href: '/privacy/' },
+  ])
+
   return (
     <InnerPageLayout showCta={false}>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <PageHero
         badge='Legal'
         title='Privacy Policy'

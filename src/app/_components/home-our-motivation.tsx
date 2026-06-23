@@ -58,7 +58,7 @@ const HomeOurMotivation = () => {
                           : 'bg-[#D1E7FE] hover:bg-primary'
                       )}
                     >
-                      <h2 className='mb-8 text-4xl font-extrabold'>{item.value}</h2>
+                      <p className='mb-8 text-4xl font-extrabold'>{item.value}</p>
                       <div className='h-auto w-[72px]'>
                         <Image
                           src={item.image}

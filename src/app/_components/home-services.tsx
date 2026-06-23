@@ -4,6 +4,7 @@ import React, { useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Image from 'next/image'
+import Link from 'next/link'
 import Container from '@/components/core/container'
 import { useApp } from '@/hooks'
 import { useGsapContext } from '@/hooks/useGsapScroll.hook'
@@ -16,30 +17,21 @@ type ServiceItemProps = {
 }
 
 const HomeServiceItem = ({ item }: ServiceItemProps) => {
-  const onClick = (slug: string) => {
-    window.location.href = `/services/${slug}/`
-  }
-
   return (
     <div className='service-card col-span-12 md:col-span-6 lg:col-span-4'>
-      <div
-        className='relative cursor-pointer overflow-hidden rounded-2xl bg-surface px-5 py-4 transition-all duration-[450ms] hover:-translate-y-1 hover:shadow-card-hover dark:bg-surface-dark [&:hover_button]:opacity-100'
-        onClick={() => onClick(item.slug)}
+      <Link
+        href={`/services/${item.slug}/`}
+        className='relative block overflow-hidden rounded-2xl bg-surface px-5 py-4 transition-all duration-[450ms] hover:-translate-y-1 hover:shadow-card-hover dark:bg-surface-dark no-underline'
         data-cursor='pointer'
-        role='link'
-        tabIndex={0}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') onClick(item.slug)
-        }}
       >
         <div className='mb-6 [&_img]:h-16 [&_img]:w-auto'>
           <Image src={item.image as string} alt={item.title} width={100} height={100} />
         </div>
-        <h3 className='mb-2 text-lg font-semibold md:text-xl'>{item.title}</h3>
+        <h3 className='mb-2 text-lg font-semibold text-heading dark:text-heading-dark md:text-xl'>{item.title}</h3>
         <div className='h-[70px] overflow-hidden'>
           <p className='text-[15px] text-muted dark:text-muted-dark'>{item.description}</p>
         </div>
-      </div>
+      </Link>
     </div>
   )
 }

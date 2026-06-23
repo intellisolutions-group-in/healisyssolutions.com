@@ -4,8 +4,8 @@ import React, { FC } from 'react'
 import { cn } from '@/lib/cn'
 
 export const socialLinks: ISocialLink[] = [
-  { name: 'Facebook', link: 'https://www.facebook.com' },
-  { name: 'Instagram', link: 'https://www.instagram.com' },
+  // { name: 'Facebook', link: 'https://www.facebook.com' },
+  // { name: 'Instagram', link: 'https://www.instagram.com' },
 ]
 
 interface SocialLinkItemProps {

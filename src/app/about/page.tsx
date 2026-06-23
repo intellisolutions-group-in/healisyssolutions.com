@@ -8,7 +8,7 @@ import ContentCard from '@/components/layout/content-card'
 import StatCard from '@/components/sections/stat-card'
 import CompanyTimeline from '@/components/motion/company-timeline'
 import Container from '@/components/core/container'
-import { createMetadata, getOrganizationSchema } from '@/lib/metadata'
+import { createMetadata, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/metadata'
 import company from '@/data/company.json'
 
 export const metadata: Metadata = createMetadata({
@@ -25,12 +25,20 @@ const STATS = [
 
 export default function AboutPage(): JSX.Element {
   const schema = getOrganizationSchema()
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about/' },
+  ])
 
   return (
     <InnerPageLayout>
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <PageHero
         badge='About'

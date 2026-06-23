@@ -9,7 +9,7 @@ interface Props {
 
 const SectionTitle: FC<Props> = ({ children, className, light }) => {
   return (
-    <h2
+    <p
       className={cn(
         'relative mb-2 pl-8 text-sm font-semibold tracking-wide',
         light ? 'text-white before:bg-white' : 'text-primary before:bg-primary',
@@ -18,7 +18,7 @@ const SectionTitle: FC<Props> = ({ children, className, light }) => {
       )}
     >
       {children}
-    </h2>
+    </p>
   )
 }
 

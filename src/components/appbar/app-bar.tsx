@@ -3,6 +3,7 @@
 import React, { FC, Fragment, useCallback, useMemo, useState, useEffect } from 'react'
 import { useWindowScroll } from 'react-use'
 import { usePathname, useRouter } from 'next/navigation'
+import Image from 'next/image'
 import { CompanyConfig } from '@/configs/company.config'
 import { cn } from '@/lib/cn'
 import AppBarNavigation from './app-bar-navigations'
@@ -54,14 +55,30 @@ const AppBar: FC = () => {
               aria-label='Back to home'
               className='flex cursor-pointer items-center border-none bg-transparent p-0'
             >
-              <span
+              {/* Light Mode Logo */}
+              <Image
+                src={CompanyConfig.logoPathLight}
+                alt={CompanyConfig.brandName}
+                width={200}
+                height={50}
                 className={cn(
-                  'whitespace-nowrap font-bold text-heading transition-all dark:text-heading-dark',
-                  shouldFloating ? 'text-[15px]' : 'text-[17px]'
+                  'w-auto object-contain transition-all dark:hidden',
+                  shouldFloating ? 'h-[30px]' : 'h-[36px]'
                 )}
-              >
-                {CompanyConfig.brandName}
-              </span>
+                priority
+              />
+              {/* Dark Mode Logo */}
+              <Image
+                src={CompanyConfig.logoPathDark}
+                alt={CompanyConfig.brandName}
+                width={200}
+                height={50}
+                className={cn(
+                  'hidden w-auto object-contain transition-all dark:block',
+                  shouldFloating ? 'h-[30px]' : 'h-[36px]'
+                )}
+                priority
+              />
             </button>
             {isMobile ? (
               <div className='ml-auto flex items-center'>

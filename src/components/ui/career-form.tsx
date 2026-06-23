@@ -7,7 +7,6 @@ import Textarea from './textarea'
 import Modal from './modal'
 import ThankYouModal from './thank-you-modal'
 import Spinner from './spinner'
-import { CompanyConfig } from '@/configs/company.config'
 
 interface Job {
   id: number
@@ -55,23 +54,17 @@ const CareerForm: FC<Props> = ({ job, open, onClose }) => {
     setResume(file)
   }
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     if (!form.name || !form.email || !form.phone || !form.location || !resume) return
     setLoading(true)
-    try {
-      await fetch(`https://${CompanyConfig.domain}/api/career-application`, {
-        method: 'POST',
-        body: JSON.stringify({ ...form, jobId: job.id }),
-      })
-    } catch {
-      // ignore per spec
-    }
-    setLoading(false)
-    onClose()
-    setSuccessOpen(true)
-    setForm({ name: '', email: '', phone: '', location: '', coverLetter: '' })
-    setResume(null)
+    setTimeout(() => {
+      setLoading(false)
+      onClose()
+      setSuccessOpen(true)
+      setForm({ name: '', email: '', phone: '', location: '', coverLetter: '' })
+      setResume(null)
+    }, 1000)
   }
 
   return (

@@ -1,19 +1,21 @@
 'use client'
 
-import React, { FC, ReactNode, ButtonHTMLAttributes } from 'react'
+import React, { FC, ReactNode } from 'react'
+import Link from 'next/link'
 import { cn } from '@/lib/cn'
 
 type ButtonVariant = 'contained' | 'outlined' | 'text'
 type ButtonColor = 'primary' | 'secondary' | 'dark' | 'light'
 type ButtonSize = 'small' | 'medium' | 'large'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {
   variant?: ButtonVariant
   color?: ButtonColor
   size?: ButtonSize
   rounded?: boolean
   startIcon?: ReactNode
   endIcon?: ReactNode
+  href?: string
 }
 
 const sizeClasses: Record<ButtonSize, string> = {
@@ -67,26 +69,25 @@ const Button: FC<ButtonProps> = ({
   endIcon,
   className,
   type = 'button',
+  href,
   ...rest
 }) => {
   const padding =
     variant === 'outlined' ? outlinedSizeClasses[size] : sizeClasses[size]
 
-  return (
-    <button
-      type={type}
-      className={cn(
-        'inline-flex min-w-10 cursor-pointer items-center justify-center font-medium tracking-wide',
-        'relative overflow-hidden border-none whitespace-nowrap outline-none transition-all duration-300',
-        'select-none [-webkit-tap-highlight-color:transparent]',
-        'before:pointer-events-none before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/25 before:to-transparent before:transition-transform before:duration-700 hover:before:translate-x-full',
-        rounded ? 'rounded-4xl' : 'rounded-lg',
-        padding,
-        colorVariantClasses[color][variant],
-        className
-      )}
-      {...rest}
-    >
+  const classes = cn(
+    'inline-flex min-w-10 cursor-pointer items-center justify-center font-medium tracking-wide',
+    'relative overflow-hidden border-none whitespace-nowrap outline-none transition-all duration-300',
+    'select-none [-webkit-tap-highlight-color:transparent]',
+    'before:pointer-events-none before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/25 before:to-transparent before:transition-transform before:duration-700 hover:before:translate-x-full',
+    rounded ? 'rounded-4xl' : 'rounded-lg',
+    padding,
+    colorVariantClasses[color][variant],
+    className
+  )
+
+  const content = (
+    <>
       {startIcon && (
         <span className='mr-1 -ml-0.5 inline-flex [&_svg]:text-xl'>{startIcon}</span>
       )}
@@ -94,6 +95,24 @@ const Button: FC<ButtonProps> = ({
       {endIcon && (
         <span className='ml-1 -mr-0.5 inline-flex [&_svg]:text-xl'>{endIcon}</span>
       )}
+    </>
+  )
+
+  if (href) {
+    return (
+      <Link href={href} className={classes} {...(rest as unknown as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
+        {content}
+      </Link>
+    )
+  }
+
+  return (
+    <button
+      type={type}
+      className={classes}
+      {...(rest as React.ButtonHTMLAttributes<HTMLButtonElement>)}
+    >
+      {content}
     </button>
   )
 }

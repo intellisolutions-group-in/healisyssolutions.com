@@ -6,7 +6,7 @@ import InnerPageLayout from '@/components/layout/inner-page-layout'
 import SectionHeader from '@/components/layout/section-header'
 import ProcessStepCard from '@/components/sections/process-step-card'
 import Container from '@/components/core/container'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import company from '@/data/company.json'
 
 const STEPS = [
@@ -25,8 +25,17 @@ export const metadata: Metadata = createMetadata({
 })
 
 export default function OurProcessPage(): JSX.Element {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Our Process', href: '/our-process/' },
+  ])
+
   return (
     <InnerPageLayout ctaButtonText='Discuss Your Project'>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <PageHero
         badge='Process'
         sectionLabel='OUR PROCESS'

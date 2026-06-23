@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
 
 import { SectionTitle, Button } from '@/components/core'
 import Container from '@/components/core/container'
@@ -22,11 +21,9 @@ const HomeFaqPreview = () => {
           <FAQItem key={item.question} item={item} />
         ))}
         <div className='mt-4 text-center'>
-          <Link href='/faq/'>
-            <Button variant='contained' color='primary'>
-              View All FAQs
-            </Button>
-          </Link>
+          <Button href='/faq/' variant='contained' color='primary'>
+            View All FAQs
+          </Button>
         </div>
       </Container>
     </section>

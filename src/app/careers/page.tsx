@@ -6,13 +6,13 @@ import InnerPageLayout from '@/components/layout/inner-page-layout'
 import SectionHeader from '@/components/layout/section-header'
 import Container from '@/components/core/container'
 import JobCard from '@/components/ui/job-card'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import careers from '@/data/careers.json'
 import company from '@/data/company.json'
 
 export const metadata: Metadata = createMetadata({
   title: 'Careers',
-  description: `Join the ${company.brandName} team! Explore open job positions in software development, mobile apps, UI/UX design, and QA in Vadodara or remote.`,
+  description: `Join the ${company.brandName} team! Explore open job positions in software development, mobile apps, UI/UX design, and QA as hybrid or remote.`,
   path: 'careers',
 })
 
@@ -29,19 +29,22 @@ export default function CareersPage(): JSX.Element {
       '@type': 'Organization' as const,
       name: company.brandName,
       sameAs: company.websiteUrl,
-      logo: `${company.websiteUrl}/images/og-image.png`,
+      logo: `${company.websiteUrl}/images/logo-dark.png`,
     },
     jobLocation: {
       '@type': 'Place' as const,
       address: {
         '@type': 'PostalAddress' as const,
-        addressLocality: 'Vadodara',
-        addressRegion: 'Gujarat',
         addressCountry: 'IN',
       },
     },
     jobLocationType: job.location.toLowerCase().includes('remote') ? ('TELECOMMUTE' as const) : undefined,
   }))
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Careers', href: '/careers/' },
+  ])
 
   return (
     <InnerPageLayout
@@ -53,6 +56,10 @@ export default function CareersPage(): JSX.Element {
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchemas) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <PageHero
         badge='Careers'

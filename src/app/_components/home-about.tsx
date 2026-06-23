@@ -59,7 +59,7 @@ const FeatureItem = ({ item }: ItemProps) => {
       >
         {item.icon}
       </div>
-      <h6 className='mt-[13.6px] text-[13px] font-semibold'>{item.title}</h6>
+      <p className='mt-[13.6px] text-[13px] font-semibold'>{item.title}</p>
     </div>
   )
 }

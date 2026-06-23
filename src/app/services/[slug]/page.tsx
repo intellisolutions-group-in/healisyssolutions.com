@@ -1,7 +1,6 @@
 import { JSX } from 'react'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
 import PageHero from '@/components/layout/page-hero'
 import PageSection from '@/components/layout/page-section'
 import InnerPageLayout from '@/components/layout/inner-page-layout'
@@ -10,7 +9,7 @@ import ServiceCard from '@/components/sections/service-card'
 import Container from '@/components/core/container'
 import { Button } from '@/components/core'
 import Chip from '@/components/ui/chip'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import servicesData from '@/data/services.json'
 import company from '@/data/company.json'
 
@@ -40,6 +39,12 @@ export default async function ServiceDetailPage({
   const service = servicesData.find((s) => s.slug === slug)
   if (!service) notFound()
 
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services/' },
+    { name: service.title, href: `/services/${slug}/` },
+  ])
+
   const serviceSchema = {
     '@context': 'https://schema.org' as const,
     '@type': 'Service' as const,
@@ -49,7 +54,7 @@ export default async function ServiceDetailPage({
       '@type': 'Organization' as const,
       name: company.brandName,
       url: company.websiteUrl,
-      logo: `${company.websiteUrl}/images/og-image.png`,
+      logo: `${company.websiteUrl}/images/logo-dark.png`,
     },
     areaServed: company.targetCountry,
     hasOfferCatalog: {
@@ -74,6 +79,10 @@ export default async function ServiceDetailPage({
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <PageHero
         badge={service.category}
@@ -122,11 +131,9 @@ export default async function ServiceDetailPage({
                     <Chip key={t} label={t} showTechIcon />
                   ))}
                 </div>
-                <Link href='/contact/'>
-                  <Button variant='contained' color='primary' size='large'>
-                    Get a Quote
-                  </Button>
-                </Link>
+                <Button href='/contact/' variant='contained' color='primary' size='large'>
+                  Get a Quote
+                </Button>
               </ContentCard>
             </div>
           </div>

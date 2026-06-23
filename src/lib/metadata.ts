@@ -68,7 +68,7 @@ export function getOrganizationSchema() {
     foundingDate: String(company.establishedYear),
     description: company.description,
     areaServed: company.targetCountry,
-    logo: `${company.websiteUrl}/images/og-image.png`,
+    logo: `${company.websiteUrl}/images/logo-dark.png`,
   }
 }
 
@@ -85,4 +85,24 @@ export function getWebSiteSchema() {
     },
   }
 }
+
+export function getBreadcrumbSchema(items: { name: string; href?: string }[]) {
+  return {
+    '@context': 'https://schema.org' as const,
+    '@type': 'BreadcrumbList' as const,
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem' as const,
+      position: index + 1,
+      name: item.name,
+      ...(item.href
+        ? {
+            item: item.href.startsWith('http')
+              ? item.href
+              : `${company.websiteUrl}${item.href.startsWith('/') ? '' : '/'}${item.href}`,
+          }
+        : {}),
+    })),
+  }
+}
+
 

@@ -11,15 +11,16 @@ export const CompanyConfig = {
   // phone: '+91 XXXXXXXXXX',
   // Office address — uncomment when available
   // address: 'Your office address, City, State, India',
-  // Logo — uncomment when logo file is available at /public/images/logo.svg
-  // logoPath: '/images/logo.svg',
+  // Logo configurations mapping the paths for both light and dark backgrounds
+  logoPathLight: '/images/logo-dark.png',
+  logoPathDark: '/images/logo-white.png',
   // Social media — uncomment when available
   // social: {
   //   facebook: 'https://www.facebook.com/yourpage',
   //   instagram: 'https://www.instagram.com/yourpage',
   // },
   businessHours: 'Mon - Fri / 9:00 AM - 6:00 PM IST',
-  careerLocation: 'Vadodara / Remote',
+  careerLocation: 'India (Hybrid) or Remote',
   tagline:
     'Delivering reliable software solutions that help businesses across India grow with confidence.',
   description:

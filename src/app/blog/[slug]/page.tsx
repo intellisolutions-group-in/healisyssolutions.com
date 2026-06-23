@@ -7,7 +7,7 @@ import InnerPageLayout from '@/components/layout/inner-page-layout'
 import BlogCard from '@/components/sections/blog-card'
 import Container from '@/components/core/container'
 import Chip from '@/components/ui/chip'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import blogsData from '@/data/blogs.json'
 import company from '@/data/company.json'
 
@@ -45,6 +45,12 @@ export default async function BlogDetailPage({
   const post = blogsData.find((p) => p.slug === slug)
   if (!post) notFound()
 
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Blog', href: '/blog/' },
+    { name: post.title, href: `/blog/${slug}/` },
+  ])
+
   const blogSchema = {
     '@context': 'https://schema.org' as const,
     '@type': 'BlogPosting' as const,
@@ -54,9 +60,8 @@ export default async function BlogDetailPage({
     datePublished: post.publishedDate,
     dateModified: post.publishedDate,
     author: {
-      '@type': 'Organization' as const,
-      name: company.brandName,
-      url: company.websiteUrl,
+      '@type': 'Person' as const,
+      name: post.author,
     },
     publisher: {
       '@type': 'Organization' as const,
@@ -64,7 +69,7 @@ export default async function BlogDetailPage({
       url: company.websiteUrl,
       logo: {
         '@type': 'ImageObject' as const,
-        url: `${company.websiteUrl}/images/og-image.png`,
+        url: `${company.websiteUrl}/images/logo-dark.png`,
       },
     },
     mainEntityOfPage: {
@@ -88,6 +93,10 @@ export default async function BlogDetailPage({
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <PageHero
         badge={post.category}

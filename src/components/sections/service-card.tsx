@@ -3,7 +3,6 @@
 import React, { FC } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Button } from '@/components/core'
 import ContentCard from '@/components/layout/content-card'
 import TiltCard from '@/components/motion/tilt-card'
 
@@ -40,9 +39,9 @@ const ServiceCard: FC<Props> = ({
         {description}
       </p>
       {showButton && (
-        <Button variant='outlined' color='primary' size='small'>
+        <div className='inline-flex min-w-10 items-center justify-center font-medium tracking-wide relative overflow-hidden border-2 border-primary text-primary bg-transparent rounded-lg px-2.5 py-1.5 text-sm transition-all duration-300 select-none hover:-translate-y-0.5'>
           Learn More
-        </Button>
+        </div>
       )}
       </Link>
     </ContentCard>

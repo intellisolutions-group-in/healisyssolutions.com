@@ -6,7 +6,7 @@ import InnerPageLayout from '@/components/layout/inner-page-layout'
 import SectionHeader from '@/components/layout/section-header'
 import PortfolioFilterGrid from '@/components/motion/portfolio-filter-grid'
 import Container from '@/components/core/container'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import portfolio from '@/data/portfolio.json'
 import company from '@/data/company.json'
 
@@ -17,8 +17,17 @@ export const metadata: Metadata = createMetadata({
 })
 
 export default function PortfolioPage(): JSX.Element {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Portfolio', href: '/portfolio/' },
+  ])
+
   return (
     <InnerPageLayout ctaButtonText='Start Your Project'>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <PageHero
         badge='Portfolio'
         sectionLabel='OUR WORK'

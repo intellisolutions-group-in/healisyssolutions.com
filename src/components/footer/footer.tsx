@@ -1,6 +1,7 @@
 'use client'
 
 import React, { FC } from 'react'
+import Image from 'next/image'
 import {
   FooterWaves,
   FooterCompanyLinks,
@@ -36,9 +37,24 @@ const Footer: FC = () => {
         <div className='mt-14 border-t border-black/[0.06] pt-10 dark:border-white/[0.08] md:mt-16 md:pt-12'>
           <div className='grid grid-cols-1 items-end gap-8 md:grid-cols-2'>
             <div className='text-center md:text-left'>
-              <p className='mb-3 text-lg font-bold text-heading dark:text-heading-dark md:text-xl'>
-                {CompanyConfig.brandName}
-              </p>
+              <div className='mb-4 flex justify-center md:justify-start'>
+                {/* Light Mode Logo */}
+                <Image
+                  src={CompanyConfig.logoPathLight}
+                  alt={CompanyConfig.brandName}
+                  width={200}
+                  height={50}
+                  className='h-10 w-auto object-contain dark:hidden'
+                />
+                {/* Dark Mode Logo */}
+                <Image
+                  src={CompanyConfig.logoPathDark}
+                  alt={CompanyConfig.brandName}
+                  width={200}
+                  height={50}
+                  className='hidden h-10 w-auto object-contain dark:block'
+                />
+              </div>
               <p className='mx-auto max-w-md text-sm leading-relaxed text-muted dark:text-muted-dark md:mx-0 md:max-w-[70%]'>
                 {AppConfig.appDescription}
               </p>

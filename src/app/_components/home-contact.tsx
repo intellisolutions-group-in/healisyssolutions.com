@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 
 import { Button } from '@/components/core'
@@ -41,16 +40,15 @@ const HomeContact = () => {
                 <Image src='/images/envelope-1.svg' alt='Contact illustration envelope' width={300} height={300} />
               </div>
               <div className='mt-4'>
-                <Link href='/contact'>
-                  <Button
-                    variant='contained'
-                    size='large'
-                    color='primary'
-                    endIcon={<SendIcon className='mr-1 h-[18px] w-[18px]' />}
-                  >
-                    Work With Us
-                  </Button>
-                </Link>
+                <Button
+                  href='/contact/'
+                  variant='contained'
+                  size='large'
+                  color='primary'
+                  endIcon={<SendIcon className='mr-1 h-[18px] w-[18px]' />}
+                >
+                  Work With Us
+                </Button>
               </div>
             </div>
           </div>
@@ -69,7 +67,7 @@ const HomeContact = () => {
               >
                 <div className='flex items-center justify-center md:justify-start'>
                   <EmailIcon className='mr-1 h-[26px] w-[26px]' />
-                  <h5 className='mb-0 text-xl font-semibold'>{CompanyConfig.email}</h5>
+                  <span className='text-xl font-semibold'>{CompanyConfig.email}</span>
                 </div>
                 <p className='text-base text-muted dark:text-muted-dark'>
                   Response within 24 hrs

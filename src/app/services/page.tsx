@@ -6,7 +6,7 @@ import InnerPageLayout from '@/components/layout/inner-page-layout'
 import SectionHeader from '@/components/layout/section-header'
 import ServiceCard from '@/components/sections/service-card'
 import Container from '@/components/core/container'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import { services } from '@/constants/service'
 
 export const metadata: Metadata = createMetadata({
@@ -16,11 +16,20 @@ export const metadata: Metadata = createMetadata({
 })
 
 export default function ServicesPage(): JSX.Element {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services/' },
+  ])
+
   return (
     <InnerPageLayout
       ctaTitle='Need a custom software solution for your business?'
       ctaButtonText='Discuss Your Project'
     >
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <PageHero
         badge='Services'
         sectionLabel='OUR SERVICES'

@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
 import SectionHeader from '@/components/layout/section-header'
 import PortfolioCard from '@/components/sections/portfolio-card'
 import Container from '@/components/core/container'
@@ -30,11 +29,9 @@ const HomePortfolioPreview = () => {
           ))}
         </div>
         <div className='mt-8 text-center'>
-          <Link href='/portfolio/'>
-            <Button variant='outlined' color='primary'>
-              View All Projects
-            </Button>
-          </Link>
+          <Button href='/portfolio/' variant='outlined' color='primary'>
+            View All Projects
+          </Button>
         </div>
       </Container>
     </section>

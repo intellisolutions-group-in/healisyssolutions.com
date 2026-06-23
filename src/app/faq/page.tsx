@@ -6,7 +6,7 @@ import InnerPageLayout from '@/components/layout/inner-page-layout'
 import SectionHeader from '@/components/layout/section-header'
 import Container from '@/components/core/container'
 import FAQItem from '@/components/ui/faq-item'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import faqData from '@/data/faq.json'
 
 export const metadata: Metadata = createMetadata({
@@ -16,6 +16,11 @@ export const metadata: Metadata = createMetadata({
 })
 
 export default function FAQPage(): JSX.Element {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'FAQ', href: '/faq/' },
+  ])
+
   const faqSchema = {
     '@context': 'https://schema.org' as const,
     '@type': 'FAQPage' as const,
@@ -37,6 +42,10 @@ export default function FAQPage(): JSX.Element {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <PageHero
         badge='FAQ'
         sectionLabel='FREQUENTLY ASKED'
@@ -57,9 +66,9 @@ export default function FAQPage(): JSX.Element {
           />
           {faqData.categories.map((cat) => (
             <div key={cat.name} className='mb-10'>
-              <h2 className='mb-4 text-lg font-bold text-heading dark:text-heading-dark'>
+              <h3 className='mb-4 text-lg font-bold text-heading dark:text-heading-dark'>
                 {cat.name}
-              </h2>
+              </h3>
               {cat.items.map((item) => (
                 <FAQItem key={item.question} item={item} />
               ))}

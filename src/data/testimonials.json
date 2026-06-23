@@ -3,70 +3,60 @@
     "id": 1,
     "name": "Priya Sharma",
     "designation": "Operations Manager",
-    "company": "Retail Business",
     "text": "Healisys Solutions delivered our inventory management system on schedule. The team understood our requirements clearly and provided practical recommendations throughout the project."
   },
   {
     "id": 2,
     "name": "Rahul Mehta",
     "designation": "Founder",
-    "company": "Logistics Startup",
     "text": "We needed a reliable tracking platform quickly. Healisys built a scalable solution that our drivers and customers use daily without issues."
   },
   {
     "id": 3,
     "name": "Ananya Patel",
     "designation": "IT Head",
-    "company": "Manufacturing Firm",
     "text": "Their enterprise application development expertise helped us digitise several manual processes. Communication was consistent and the code quality was solid."
   },
   {
     "id": 4,
     "name": "Vikram Singh",
     "designation": "Product Owner",
-    "company": "FinTech Venture",
     "text": "From API design to frontend polish, the Healisys team handled our web platform professionally. They were responsive to feedback during each sprint."
   },
   {
     "id": 5,
     "name": "Deepa Iyer",
     "designation": "Director",
-    "company": "Healthcare Services",
     "text": "We engaged Healisys for a custom patient portal. Security and usability were prioritised from day one, which gave us confidence at launch."
   },
   {
     "id": 6,
     "name": "Karan Desai",
     "designation": "CEO",
-    "company": "E-commerce Brand",
     "text": "Our online store was rebuilt with better performance and a cleaner checkout flow. Sales team noticed improved conversion within the first month."
   },
   {
     "id": 7,
     "name": "Meera Nair",
     "designation": "Project Lead",
-    "company": "Education Platform",
     "text": "The mobile app development work was thorough — from UI design through testing. Healisys remained available for post-launch adjustments as well."
   },
   {
     "id": 8,
     "name": "Arjun Reddy",
     "designation": "CTO",
-    "company": "SaaS Company",
     "text": "Healisys helped modernise our legacy backend with a cleaner architecture. Migration was planned carefully to minimise downtime."
   },
   {
     "id": 9,
     "name": "Sneha Gupta",
     "designation": "Business Analyst",
-    "company": "Consulting Firm",
     "text": "Their software consulting sessions gave us a clear technology roadmap. Practical advice without unnecessary complexity."
   },
   {
     "id": 10,
     "name": "Rohit Verma",
     "designation": "Managing Partner",
-    "company": "Legal Services",
     "text": "Document management was a pain point for years. Healisys built a tailored solution that our staff adopted quickly."
   }
 ]

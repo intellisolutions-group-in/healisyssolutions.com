@@ -1,7 +1,6 @@
 'use client'
 
 import React, { FC } from 'react'
-import Link from 'next/link'
 import { Button } from '@/components/core'
 import Container from '@/components/core/container'
 import { AppConfig } from '@/configs'
@@ -31,11 +30,9 @@ const PageCTA: FC<Props> = ({
           <h2 className='mb-6 text-2xl font-bold leading-relaxed md:text-3xl lg:text-4xl'>
             {title}
           </h2>
-          <Link href={buttonHref} data-cursor='pointer'>
-            <Button variant='contained' color='light' size='large'>
-              {buttonText}
-            </Button>
-          </Link>
+          <Button href={buttonHref} variant='contained' color='light' size='large'>
+            {buttonText}
+          </Button>
         </div>
       </div>
     </Container>
