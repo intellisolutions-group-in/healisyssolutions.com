@@ -53,7 +53,6 @@ export default function PrivacyPage(): JSX.Element {
       <PageSection variant='muted'>
         <Container size='md'>
           <ContentCard hover={false} padding='lg'>
-            <p className='mb-6 text-sm text-muted dark:text-muted-dark'>Last updated: June 2026</p>
             <p className='mb-8 leading-relaxed text-muted dark:text-muted-dark'>
               {company.brandName} (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) operates the website{' '}
               {company.websiteUrl}. This Privacy Policy explains how we collect, use, and safeguard

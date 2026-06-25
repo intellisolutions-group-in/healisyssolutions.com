@@ -57,7 +57,6 @@ export default function TermsPage(): JSX.Element {
       <PageSection variant='muted'>
         <Container size='md'>
           <ContentCard hover={false} padding='lg'>
-            <p className='mb-6 text-sm text-muted dark:text-muted-dark'>Last updated: June 2026</p>
             <p className='mb-8 leading-relaxed text-muted dark:text-muted-dark'>
               By accessing and using the {company.brandName} website at {company.websiteUrl}, you
               agree to these Terms of Service. If you do not agree, please do not use our website.
