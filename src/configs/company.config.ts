@@ -19,7 +19,7 @@ export const CompanyConfig = {
   //   facebook: 'https://www.facebook.com/yourpage',
   //   instagram: 'https://www.instagram.com/yourpage',
   // },
-  businessHours: 'Mon - Fri / 9:00 AM - 6:00 PM IST',
+  businessHours: 'Mon - Fri / 10:00 AM - 7:00 PM IST',
   careerLocation: 'India (Hybrid) or Remote',
   tagline:
     'Delivering reliable software solutions that help businesses across India grow with confidence.',

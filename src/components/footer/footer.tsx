@@ -9,7 +9,6 @@ import {
   FooterServicesLink,
   FooterSupportLinks,
 } from '@/components/footer'
-import HeartIcon from '@/assets/icons/ion--heart-sharp.svg'
 import { AppConfig } from '@/configs'
 import { CompanyConfig } from '@/configs/company.config'
 import Container from '@/components/core/container'
@@ -62,9 +61,8 @@ const Footer: FC = () => {
 
             <div className='flex flex-col items-center justify-end md:items-end'>
               {/* Social media — uncomment when available */}
-              <p className='flex items-center text-sm font-medium text-heading dark:text-heading-dark'>
-                © {year} {CompanyConfig.brandName} | Made with
-                <HeartIcon className='mx-0.5 h-[18px] w-[18px] text-[#ff0808]' />
+              <p className='text-sm font-medium text-heading dark:text-heading-dark'>
+                Copyright © {CompanyConfig.establishedYear}- {year} {CompanyConfig.brandName}. All Rights Reserved.
               </p>
             </div>
           </div>
