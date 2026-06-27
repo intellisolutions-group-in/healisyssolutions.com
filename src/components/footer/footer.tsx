@@ -41,17 +41,17 @@ const Footer: FC = () => {
                 <Image
                   src={CompanyConfig.logoPathLight}
                   alt={CompanyConfig.brandName}
-                  width={200}
-                  height={50}
-                  className='h-10 w-auto object-contain dark:hidden'
+                  width={250}
+                  height={55}
+                  className='h-auto w-auto object-contain dark:hidden'
                 />
                 {/* Dark Mode Logo */}
                 <Image
                   src={CompanyConfig.logoPathDark}
                   alt={CompanyConfig.brandName}
-                  width={200}
-                  height={50}
-                  className='hidden h-10 w-auto object-contain dark:block'
+                  width={250}
+                  height={55}
+                  className='hidden h-auto w-auto object-contain dark:block'
                 />
               </div>
               <p className='mx-auto max-w-md text-sm leading-relaxed text-muted dark:text-muted-dark md:mx-0 md:max-w-[70%]'>

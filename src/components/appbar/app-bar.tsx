@@ -63,7 +63,7 @@ const AppBar: FC = () => {
                 height={50}
                 className={cn(
                   'w-auto object-contain transition-all dark:hidden',
-                  shouldFloating ? 'h-[30px]' : 'h-[36px]'
+                  shouldFloating ? 'h-[45px]' : 'h-[55px]'
                 )}
                 priority
               />
@@ -75,7 +75,7 @@ const AppBar: FC = () => {
                 height={50}
                 className={cn(
                   'hidden w-auto object-contain transition-all dark:block',
-                  shouldFloating ? 'h-[30px]' : 'h-[36px]'
+                  shouldFloating ? 'h-[45px]' : 'h-[55px]'
                 )}
                 priority
               />
