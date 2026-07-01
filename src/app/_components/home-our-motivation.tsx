@@ -35,7 +35,7 @@ const HomeOurMotivation = () => {
       className='w-full bg-surface pb-8 pt-8 dark:bg-surface-dark md:pb-16 md:pt-2 lg:pb-20'
     >
       <Container>
-        <div className='grid grid-cols-12 gap-12'>
+        <div className='grid grid-cols-12'>
           <div className='col-span-12 pr-0 md:col-span-4 md:pr-4'>
             <SectionTitle>WE WORK HARD, WE PLAY HARD</SectionTitle>
             <h3 className='mb-3 text-xl leading-snug md:text-[26px] lg:text-[32px] font-bold text-heading dark:text-heading-dark'>

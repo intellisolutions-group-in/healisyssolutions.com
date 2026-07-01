@@ -69,9 +69,7 @@ const HomeContact = () => {
                   <EmailIcon className='mr-1 h-[26px] w-[26px]' />
                   <span className='text-xl font-semibold'>{CompanyConfig.email}</span>
                 </div>
-                <p className='text-base text-muted dark:text-muted-dark'>
-                  Response within 24 hrs
-                </p>
+
               </a>
             </div>
           </div>

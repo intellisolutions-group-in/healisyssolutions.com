@@ -28,7 +28,7 @@ const ContactInfoItem: FC<ContactInfoItemProps> = ({
       </span>
       <div className='min-w-0'>
         <p className='text-[15px] font-semibold leading-snug'>{value}</p>
-        <p className='mt-1 text-sm text-muted dark:text-muted-dark'>{label}</p>
+        {/* <p className='mt-1 text-sm text-muted dark:text-muted-dark'>{label}</p> */}
       </div>
     </div>
   </a>

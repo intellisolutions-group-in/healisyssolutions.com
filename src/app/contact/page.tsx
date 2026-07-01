@@ -57,7 +57,7 @@ export default function ContactPage(): JSX.Element {
                 <EmailIcon className='mt-0.5 h-6 w-6 shrink-0 text-heading group-hover:text-primary dark:text-heading-dark' />
                 <div>
                   <p className='font-semibold text-heading dark:text-heading-dark'>{CompanyConfig.email}</p>
-                  <p className='text-sm text-muted dark:text-muted-dark'>Response within 24 hrs</p>
+                  {/* <p className='text-sm text-muted dark:text-muted-dark'>Response within 24 hrs</p> */}
                 </div>
               </a>
               <ContentCard hover={false} className='mb-4'>

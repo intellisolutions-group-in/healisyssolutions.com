@@ -63,7 +63,6 @@ const HomePage = (): JSX.Element => {
       <HomeTestimonialsPreview />
       <HomeFaqPreview />
       <HomeCTA />
-      <HomeInquiryForm />
       <HomeContact />
     </div>
   )

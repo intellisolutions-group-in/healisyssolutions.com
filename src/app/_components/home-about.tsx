@@ -73,7 +73,7 @@ const HomeAbout = () => {
       className='flex w-full flex-col items-center justify-center bg-surface py-10 dark:bg-surface-dark md:py-14 lg:py-[72px]'
     >
       <Container>
-        <div className='grid grid-cols-12 gap-16'>
+        <div className='grid grid-cols-12'>
           <div className='col-span-12 pr-0 md:col-span-7 md:pr-6'>
             <div className='relative w-full md:w-[400px]'>
               <SectionTitle>ABOUT US ?</SectionTitle>
