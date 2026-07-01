@@ -7,14 +7,12 @@ import EmailIcon from '@/assets/icons/eva--email-outline.svg'
 
 interface ContactInfoItemProps {
   icon: ReactNode
-  label: string
   value: string
   link: string
 }
 
 const ContactInfoItem: FC<ContactInfoItemProps> = ({
   icon,
-  label,
   value,
   link,
 }) => (
@@ -39,7 +37,6 @@ const FooterContactInfo: FC = () => (
     <FooterSectionTitle title='Contact Info' />
     <ContactInfoItem
       value={CompanyConfig.email}
-      label='Response within 24hrs'
       link={`mailto:${CompanyConfig.email}`}
       icon={<EmailIcon />}
     />

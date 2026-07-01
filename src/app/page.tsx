@@ -42,10 +42,6 @@ const HomeFaqPreview = dynamic(() => import('./_components/home-faq-preview'), {
 const HomeCTA = dynamic(() => import('./_components/home-cta'), {
   loading: () => <PageLoader />,
 })
-const HomeInquiryForm = dynamic(
-  () => import('./_components/home-inquiry-form'),
-  { loading: () => <PageLoader /> }
-)
 const HomeContact = dynamic(() => import('./_components/home-contact'), {
   loading: () => <PageLoader />,
 })

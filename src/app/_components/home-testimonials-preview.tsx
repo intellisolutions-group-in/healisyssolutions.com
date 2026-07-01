@@ -24,6 +24,7 @@ const HomeTestimonialsPreview = () => {
               key={t.id}
               text={t.text}
               name={t.name}
+              designation={t.designation}
             />
           ))}
         </div>

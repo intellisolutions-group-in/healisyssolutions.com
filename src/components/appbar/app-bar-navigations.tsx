@@ -10,21 +10,28 @@ interface LinkItemProps {
   label: string
   path: string
   icon?: ReactElement
+  isMobile?: boolean
 }
 
-const LinkItem: FC<LinkItemProps> = ({ label, path, icon }) => {
+const LinkItem: FC<LinkItemProps> = ({ label, path, icon, isMobile }) => {
   const pathName = usePathname()
-  const isActive = pathName === path
+  // Ensure that Home ('/') is only active on the exact path
+  // and other paths are active if the current pathName starts with them
+  const isActive =
+    path === '/'
+      ? pathName === '/'
+      : pathName === path || pathName.startsWith(`${path}/`)
 
   return (
     <Link
       href={path}
       className={cn(
-        'group relative mx-1.5 inline-block cursor-pointer overflow-hidden rounded-4xl px-4 py-2',
+        'group relative inline-block cursor-pointer overflow-hidden rounded-4xl px-4 py-2',
         'text-sm font-semibold no-underline transition-colors',
         isActive
           ? 'bg-primary text-primary-contrast'
-          : 'text-heading hover:bg-primary hover:text-primary-contrast dark:text-heading-dark'
+          : 'text-heading hover:bg-primary hover:text-primary-contrast dark:text-heading-dark',
+        isMobile ? 'my-1 w-full text-center text-lg py-3' : 'mx-1.5'
       )}
     >
       {icon && (
@@ -41,15 +48,16 @@ const LinkItem: FC<LinkItemProps> = ({ label, path, icon }) => {
 
 const MemoizedLinkItem = memo(LinkItem)
 
-const AppBarNavigation: FC = () => (
-  <nav className='mx-auto'>
-    <ul className='m-0 list-none p-0 leading-none'>
+const AppBarNavigation: FC<{ isMobile?: boolean }> = ({ isMobile }) => (
+  <nav className={cn('mx-auto', isMobile ? 'w-full' : '')}>
+    <ul className={cn('m-0 list-none p-0 leading-none', isMobile ? 'flex flex-col' : '')}>
       {companyMenus.map((item, index) => (
-        <li key={String(index)} className='inline-block'>
+        <li key={String(index)} className={cn(isMobile ? 'block w-full' : 'inline-block')}>
           <MemoizedLinkItem
             label={item.label}
             path={item.path}
             icon={item.icon}
+            isMobile={isMobile}
           />
         </li>
       ))}
