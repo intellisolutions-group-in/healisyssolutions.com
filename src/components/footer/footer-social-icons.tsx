@@ -1,7 +1,8 @@
 import React from 'react'
+import SocialLinks from '@/components/social-links'
 
 const FooterSocialIcon = () => {
-  return <div />
+  return <SocialLinks />
 }
 
 export default FooterSocialIcon

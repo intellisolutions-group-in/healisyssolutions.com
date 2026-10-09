@@ -12,6 +12,7 @@ import {
 import { AppConfig } from '@/configs'
 import { CompanyConfig } from '@/configs/company.config'
 import Container from '@/components/core/container'
+import SocialLinks from '@/components/social-links'
 
 const Footer: FC = () => {
   const year = new Date().getFullYear()
@@ -60,7 +61,9 @@ const Footer: FC = () => {
             </div>
 
             <div className='flex flex-col items-center justify-end md:items-end'>
-              {/* Social media — uncomment when available */}
+              <div className='mb-3'>
+                <SocialLinks />
+              </div>
               <p className='text-sm font-medium text-heading dark:text-heading-dark'>
                 Copyright © {CompanyConfig.establishedYear}- {year} {CompanyConfig.brandName}. All Rights Reserved.
               </p>

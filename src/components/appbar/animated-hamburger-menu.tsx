@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import AppBarNavigation from './app-bar-navigations'
 import AppBarSwitchDarkMode from './switch-dark-mode'
+import SocialLinks from '@/components/social-links'
 
 const AnimatedHamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -58,7 +59,10 @@ const AnimatedHamburgerMenu = () => {
           >
             <div className='flex flex-col items-center space-y-4'>
               <AppBarNavigation isMobile />
-              <div className='mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 w-full flex justify-center'>
+              <div className='pt-2'>
+                <SocialLinks />
+              </div>
+              <div className='mt-2 pt-4 border-t border-gray-100 dark:border-gray-800 w-full flex justify-center'>
                 <AppBarSwitchDarkMode />
               </div>
             </div>

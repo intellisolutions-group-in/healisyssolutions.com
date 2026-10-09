@@ -11,6 +11,7 @@ import EmailIcon from '@/assets/icons/eva--email-outline.svg'
 import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import { CompanyConfig } from '@/configs/company.config'
 import company from '@/data/company.json'
+import SocialLinks from '@/components/social-links'
 
 export const metadata: Metadata = createMetadata({
   title: 'Contact Us',
@@ -63,6 +64,10 @@ export default function ContactPage(): JSX.Element {
               <ContentCard hover={false} className='mb-4'>
                 <p className='mb-1 font-semibold text-heading dark:text-heading-dark'>Business Hours</p>
                 <p className='text-sm text-muted dark:text-muted-dark'>{CompanyConfig.businessHours}</p>
+              </ContentCard>
+              <ContentCard hover={false} className='mb-4'>
+                <p className='mb-2 font-semibold text-heading dark:text-heading-dark'>Follow Us</p>
+                <SocialLinks />
               </ContentCard>
               <div className='rounded-2xl border border-dashed border-black/10 bg-background p-8 text-center dark:border-white/10 dark:bg-background-dark'>
                 <p className='text-sm text-muted dark:text-muted-dark'>

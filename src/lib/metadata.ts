@@ -69,6 +69,7 @@ export function getOrganizationSchema() {
     description: company.description,
     areaServed: company.targetCountry,
     logo: `${company.websiteUrl}/images/logo-dark.png`,
+    sameAs: company.socialMedia ? Object.values(company.socialMedia).filter(Boolean) : [],
   }
 }
 

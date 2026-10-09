@@ -14,11 +14,11 @@ export const CompanyConfig = {
   // Logo configurations mapping the paths for both light and dark backgrounds
   logoPathLight: '/images/logo-dark.png',
   logoPathDark: '/images/logo-white.png',
-  // Social media — uncomment when available
-  // social: {
-  //   facebook: 'https://www.facebook.com/yourpage',
-  //   instagram: 'https://www.instagram.com/yourpage',
-  // },
+  // Social media
+  social: {
+    facebook: 'https://www.facebook.com/healisyssolutions1',
+    instagram: 'https://www.instagram.com/healisyssolutions/?hl=en',
+  },
   businessHours: 'Mon - Fri / 10:00 AM - 7:00 PM IST',
   careerLocation: 'India (Hybrid) or Remote',
   tagline:

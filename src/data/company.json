@@ -7,6 +7,10 @@
   "domainRegisteredDate": "2010-04-24",
   "establishedYear": 2010,
   "email": "info@healisyssolutions.com",
+  "socialMedia": {
+    "facebook": "https://www.facebook.com/healisyssolutions1",
+    "instagram": "https://www.instagram.com/healisyssolutions/?hl=en"
+  },
   "businessHours": "Mon - Fri / 10:00 AM - 7:00 PM IST",
   "careerLocation": "India (Hybrid) or Remote",
   "tagline": "Delivering reliable software solutions that help businesses across India grow with confidence.",
