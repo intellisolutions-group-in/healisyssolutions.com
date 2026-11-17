@@ -79,6 +79,7 @@ export default function AboutPage(): JSX.Element {
                 <div><dt className='inline font-semibold text-heading dark:text-heading-dark'>Industry: </dt><dd className='inline text-muted dark:text-muted-dark'>{company.industry}</dd></div>
                 <div><dt className='inline font-semibold text-heading dark:text-heading-dark'>Country: </dt><dd className='inline text-muted dark:text-muted-dark'>{company.targetCountry}</dd></div>
                 <div><dt className='inline font-semibold text-heading dark:text-heading-dark'>Email: </dt><dd className='inline text-muted dark:text-muted-dark'>{company.email}</dd></div>
+                <div><dt className='inline font-semibold text-heading dark:text-heading-dark'>Phone: </dt><dd className='inline text-muted dark:text-muted-dark'>{company.phone}</dd></div>
                 <div><dt className='inline font-semibold text-heading dark:text-heading-dark'>Domain Registered: </dt><dd className='inline text-muted dark:text-muted-dark'>{company.domainRegisteredDate}</dd></div>
               </dl>
             </ContentCard>

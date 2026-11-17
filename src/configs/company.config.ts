@@ -7,8 +7,7 @@ export const CompanyConfig = {
   domainRegisteredDate: '2010-04-24',
   establishedYear: 2010,
   email: 'info@healisyssolutions.com',
-  // Phone — uncomment when available
-  // phone: '+91 XXXXXXXXXX',
+  phone: '+91 9998037534',
   // Office address — uncomment when available
   // address: 'Your office address, City, State, India',
   // Logo configurations mapping the paths for both light and dark backgrounds

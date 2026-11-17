@@ -65,6 +65,7 @@ export function getOrganizationSchema() {
     name: company.brandName,
     url: company.websiteUrl,
     email: company.email,
+    telephone: company.phone,
     foundingDate: String(company.establishedYear),
     description: company.description,
     areaServed: company.targetCountry,

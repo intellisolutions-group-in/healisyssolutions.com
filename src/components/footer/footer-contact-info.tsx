@@ -4,6 +4,7 @@ import React, { FC, ReactNode } from 'react'
 import { FooterSectionTitle } from '@/components/footer'
 import { CompanyConfig } from '@/configs/company.config'
 import EmailIcon from '@/assets/icons/eva--email-outline.svg'
+import PhoneIcon from '@/assets/icons/eva--phone-outline.svg'
 
 interface ContactInfoItemProps {
   icon: ReactNode
@@ -40,9 +41,11 @@ const FooterContactInfo: FC = () => (
       link={`mailto:${CompanyConfig.email}`}
       icon={<EmailIcon />}
     />
-    {/* Phone — uncomment when available
-    <ContactInfoItem ... />
-    */}
+    <ContactInfoItem
+      value={CompanyConfig.phone}
+      link={`tel:${CompanyConfig.phone.replace(/\s+/g, '')}`}
+      icon={<PhoneIcon />}
+    />
     {/* Office address — uncomment when available
     <ContactInfoItem ... />
     */}

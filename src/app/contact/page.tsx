@@ -8,6 +8,7 @@ import ContentCard from '@/components/layout/content-card'
 import Container from '@/components/core/container'
 import ContactForm from '@/components/ui/contact-form'
 import EmailIcon from '@/assets/icons/eva--email-outline.svg'
+import PhoneIcon from '@/assets/icons/eva--phone-outline.svg'
 import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import { CompanyConfig } from '@/configs/company.config'
 import company from '@/data/company.json'
@@ -49,16 +50,25 @@ export default function ContactPage(): JSX.Element {
               <SectionHeader
                 sectionLabel='GET IN TOUCH'
                 title='Contact Information'
-                description='Reach us by email during business hours. We typically respond within one business day.'
+                description='Reach us by email or phone during business hours. We typically respond within one business day.'
               />
               <a
                 href={`mailto:${CompanyConfig.email}`}
-                className='group mb-6 flex items-start gap-3 no-underline transition-colors hover:text-primary'
+                className='group mb-4 flex items-start gap-3 no-underline transition-colors hover:text-primary'
               >
                 <EmailIcon className='mt-0.5 h-6 w-6 shrink-0 text-heading group-hover:text-primary dark:text-heading-dark' />
                 <div>
                   <p className='font-semibold text-heading dark:text-heading-dark'>{CompanyConfig.email}</p>
                   {/* <p className='text-sm text-muted dark:text-muted-dark'>Response within 24 hrs</p> */}
+                </div>
+              </a>
+              <a
+                href={`tel:${CompanyConfig.phone.replace(/\s+/g, '')}`}
+                className='group mb-6 flex items-start gap-3 no-underline transition-colors hover:text-primary'
+              >
+                <PhoneIcon className='mt-0.5 h-6 w-6 shrink-0 text-heading group-hover:text-primary dark:text-heading-dark' />
+                <div>
+                  <p className='font-semibold text-heading dark:text-heading-dark'>{CompanyConfig.phone}</p>
                 </div>
               </a>
               <ContentCard hover={false} className='mb-4'>

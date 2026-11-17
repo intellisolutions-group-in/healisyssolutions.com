@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { Button } from '@/components/core'
 import Container from '@/components/core/container'
 import EmailIcon from '@/assets/icons/eva--email-outline.svg'
+import PhoneIcon from '@/assets/icons/eva--phone-outline.svg'
 import SendIcon from '@/assets/icons/picon--send.svg'
 import { CompanyConfig } from '@/configs/company.config'
 
@@ -69,7 +70,17 @@ const HomeContact = () => {
                   <EmailIcon className='mr-1 h-[26px] w-[26px]' />
                   <span className='text-xl font-semibold'>{CompanyConfig.email}</span>
                 </div>
-
+              </a>
+            </div>
+            <div className='col-span-12 md:col-span-5'>
+              <a
+                href={`tel:${CompanyConfig.phone.replace(/\s+/g, '')}`}
+                className='font-medium text-heading no-underline transition-colors hover:text-primary dark:text-heading-dark'
+              >
+                <div className='flex items-center justify-center md:justify-end'>
+                  <PhoneIcon className='mr-1 h-[26px] w-[26px]' />
+                  <span className='text-xl font-semibold'>{CompanyConfig.phone}</span>
+                </div>
               </a>
             </div>
           </div>
