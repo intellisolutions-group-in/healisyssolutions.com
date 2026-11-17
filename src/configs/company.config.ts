@@ -8,8 +8,12 @@ export const CompanyConfig = {
   establishedYear: 2010,
   email: 'info@healisyssolutions.com',
   phone: '+91 9998037534',
-  // Office address — uncomment when available
-  // address: 'Your office address, City, State, India',
+  address:
+    'Office no -7, 3rd Floor, Business Square, Baner - Pashan Link Rd, near Regent Plaza Mall, Pashan, Pune, Maharashtra 411021',
+  addresses: [
+    'Office no -7, 3rd Floor, Business Square, Baner - Pashan Link Rd, near Regent Plaza Mall, Pashan, Pune, Maharashtra 411021',
+    'Rajhans Complex, Civil Char Rasta, 316, 2, Ring Rd, Sagrampura, Surat, Gujarat 395002',
+  ],
   // Logo configurations mapping the paths for both light and dark backgrounds
   logoPathLight: '/images/logo-dark.png',
   logoPathDark: '/images/logo-white.png',

@@ -5,6 +5,7 @@ import { FooterSectionTitle } from '@/components/footer'
 import { CompanyConfig } from '@/configs/company.config'
 import EmailIcon from '@/assets/icons/eva--email-outline.svg'
 import PhoneIcon from '@/assets/icons/eva--phone-outline.svg'
+import LocationIcon from '@/assets/icons/tdesign--location.svg'
 
 interface ContactInfoItemProps {
   icon: ReactNode
@@ -46,9 +47,14 @@ const FooterContactInfo: FC = () => (
       link={`tel:${CompanyConfig.phone.replace(/\s+/g, '')}`}
       icon={<PhoneIcon />}
     />
-    {/* Office address — uncomment when available
-    <ContactInfoItem ... />
-    */}
+    {CompanyConfig.addresses.map((address) => (
+      <ContactInfoItem
+        key={address}
+        value={address}
+        link={`https://maps.google.com/?q=${encodeURIComponent(address)}`}
+        icon={<LocationIcon />}
+      />
+    ))}
   </div>
 )
 

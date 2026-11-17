@@ -66,6 +66,11 @@ export function getOrganizationSchema() {
     url: company.websiteUrl,
     email: company.email,
     telephone: company.phone,
+    address: company.addresses.map((addr) => ({
+      '@type': 'PostalAddress' as const,
+      streetAddress: addr,
+      addressCountry: 'IN',
+    })),
     foundingDate: String(company.establishedYear),
     description: company.description,
     areaServed: company.targetCountry,

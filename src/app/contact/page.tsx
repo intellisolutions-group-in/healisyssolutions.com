@@ -9,6 +9,7 @@ import Container from '@/components/core/container'
 import ContactForm from '@/components/ui/contact-form'
 import EmailIcon from '@/assets/icons/eva--email-outline.svg'
 import PhoneIcon from '@/assets/icons/eva--phone-outline.svg'
+import LocationIcon from '@/assets/icons/tdesign--location.svg'
 import { createMetadata, getBreadcrumbSchema } from '@/lib/metadata'
 import { CompanyConfig } from '@/configs/company.config'
 import company from '@/data/company.json'
@@ -64,13 +65,29 @@ export default function ContactPage(): JSX.Element {
               </a>
               <a
                 href={`tel:${CompanyConfig.phone.replace(/\s+/g, '')}`}
-                className='group mb-6 flex items-start gap-3 no-underline transition-colors hover:text-primary'
+                className='group mb-4 flex items-start gap-3 no-underline transition-colors hover:text-primary'
               >
                 <PhoneIcon className='mt-0.5 h-6 w-6 shrink-0 text-heading group-hover:text-primary dark:text-heading-dark' />
                 <div>
                   <p className='font-semibold text-heading dark:text-heading-dark'>{CompanyConfig.phone}</p>
                 </div>
               </a>
+              {CompanyConfig.addresses.map((address, index) => (
+                <a
+                  key={address}
+                  href={`https://maps.google.com/?q=${encodeURIComponent(address)}`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className={`group flex items-start gap-3 no-underline transition-colors hover:text-primary ${
+                    index === CompanyConfig.addresses.length - 1 ? 'mb-6' : 'mb-4'
+                  }`}
+                >
+                  <LocationIcon className='mt-0.5 h-6 w-6 shrink-0 text-heading group-hover:text-primary dark:text-heading-dark' />
+                  <div>
+                    <p className='font-semibold text-heading dark:text-heading-dark'>{address}</p>
+                  </div>
+                </a>
+              ))}
               <ContentCard hover={false} className='mb-4'>
                 <p className='mb-1 font-semibold text-heading dark:text-heading-dark'>Business Hours</p>
                 <p className='text-sm text-muted dark:text-muted-dark'>{CompanyConfig.businessHours}</p>
@@ -79,11 +96,6 @@ export default function ContactPage(): JSX.Element {
                 <p className='mb-2 font-semibold text-heading dark:text-heading-dark'>Follow Us</p>
                 <SocialLinks />
               </ContentCard>
-              <div className='rounded-2xl border border-dashed border-black/10 bg-background p-8 text-center dark:border-white/10 dark:bg-background-dark'>
-                <p className='text-sm text-muted dark:text-muted-dark'>
-                  Map placeholder — office location can be added when address is available.
-                </p>
-              </div>
             </div>
             <div className='lg:col-span-7'>
               <ContentCard hover={false} padding='lg'>
